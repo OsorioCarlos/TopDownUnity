@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float damage;
     [SerializeField] private float interactionRadius;
     //[SerializeField] private LayerMask whatIsCollisible;
 
@@ -48,6 +49,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
+        }
+        //TODO: Check if can atk
+        LanzarAtaque();
+    }
+
+    private void LanzarAtaque()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger("attack");
         }
     }
 
@@ -99,6 +110,19 @@ public class Player : MonoBehaviour
             if (colliderAhead.TryGetComponent(out Interactable interactable))
             {
                 interactable.Interact();
+            }
+        }
+    }
+
+    //Used as animation event
+    private void Attack()
+    {
+        colliderAhead = UseOverlap();
+        if (colliderAhead)
+        {
+            if (colliderAhead.TryGetComponent(out SistemaVidas sistemaVidas))
+            {
+                sistemaVidas.RecibirDanho(damage);
             }
         }
     }
