@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float damage;
     [SerializeField] private float interactionRadius;
-    //[SerializeField] private LayerMask whatIsCollisible;
+    [SerializeField] private LayerMask whatIsCollisible;
 
     private float inputH;
     private float inputV;
@@ -98,8 +98,7 @@ public class Player : MonoBehaviour
 
     private Collider2D UseOverlap()
     {
-        //return Physics2D.OverlapCircle(interactionPoint, interactionRadius, whatIsCollisible);
-        return Physics2D.OverlapCircle(interactionPoint, interactionRadius);
+        return Physics2D.OverlapCircle(interactionPoint, interactionRadius, whatIsCollisible);
     }
 
     private void Interact()
