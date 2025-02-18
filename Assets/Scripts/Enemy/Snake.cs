@@ -16,4 +16,9 @@ public class Snake : Enemy
     {
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageToThePlayer(collision);
+    }
 }
