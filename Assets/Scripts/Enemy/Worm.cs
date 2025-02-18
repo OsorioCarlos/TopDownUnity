@@ -16,4 +16,9 @@ public class Worm : Enemy
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageToThePlayer(collision);
+    }
 }

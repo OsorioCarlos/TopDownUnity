@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private float damage;
+    [SerializeField] private float health;
+
     //Components
     private Animator animator;
 
@@ -21,6 +23,17 @@ public class Enemy : MonoBehaviour
         }
         currentState = newState;
         currentState.OnEnterState(this);
+    }
+
+    protected void DamageToThePlayer(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out Player player))
+        {
+            if (player.TryGetComponent(out SistemaVidas playerHealthSystem))
+            {
+                playerHealthSystem.RecibirDanho(damage);
+            }
+        }
     }
 
     protected void SetAnimator(Animator animator)

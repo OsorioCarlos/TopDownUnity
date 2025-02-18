@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3549382289676021437}
   m_Layer: 0
   m_Name: Fungus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86870feac57cb9e4faa54b52e16d64c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  health: 0
 --- !u!114 &8147687872000616270
 MonoBehaviour:
   m_ObjectHideFlags: 0
