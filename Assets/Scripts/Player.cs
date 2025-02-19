@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float interactionRadius;
     [SerializeField] private LayerMask whatIsCollisible;
+    [SerializeField] private LayerMask queEsDanhable;
 
     private float inputH;
     private float inputV;
@@ -116,12 +117,16 @@ public class Player : MonoBehaviour
     //Used as animation event
     private void Attack()
     {
-        colliderAhead = UseOverlap();
-        if (colliderAhead)
+        Collider2D[] colliderTocados = Physics2D.OverlapCircleAll(interactionPoint, interactionRadius, queEsDanhable);
+        foreach (Collider2D colliderAhead in colliderTocados)
         {
             if (colliderAhead.TryGetComponent(out SistemaVidas sistemaVidas))
             {
                 sistemaVidas.RecibirDanho(damage);
+            }
+            if (colliderAhead.TryGetComponent(out Enemy enemy))
+            {
+                enemy.TakeDamage();
             }
         }
     }

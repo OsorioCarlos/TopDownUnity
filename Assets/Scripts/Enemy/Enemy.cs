@@ -40,4 +40,10 @@ public class Enemy : MonoBehaviour
     {
         this.animator = animator;
     }
+
+    public void TakeDamage(){
+        State<Enemy> lastState = currentState;
+        ChangeState(GetComponent<DamageState>());
+        ChangeState(lastState);
+    }
 }
