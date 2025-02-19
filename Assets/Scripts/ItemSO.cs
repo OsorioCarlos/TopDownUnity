@@ -8,4 +8,5 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public int damage;
     public Sprite icon;
+    public float healAmount;
 }
