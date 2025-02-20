@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Manzana
   damage: 0
   icon: {fileID: 660100884, guid: b631ed305dfd43c488e0f8edf5c829bc, type: 3}
-  healAmount: 1
+  healAmount: 0.5
