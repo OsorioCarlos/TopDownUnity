@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
             if (player.TryGetComponent(out SistemaVidas playerHealthSystem))
             {
                 playerHealthSystem.RecibirDanho(damage);
+                player.ShowDamage();
             }
         }
     }

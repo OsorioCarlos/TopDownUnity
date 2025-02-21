@@ -43,6 +43,15 @@ public class SistemaVidas : MonoBehaviour
         }
     }
 
+    public void RaiseMaxHealth(float vidaRecibida)
+    {
+        maxVidas += vidaRecibida;
+        if(maxVidas > 10)
+        {
+            maxVidas = 10;
+        }
+    }
+
     public bool isFullLife()
     {
         return currentVidas >= maxVidas;

@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float damage;
     [SerializeField] private float interactionRadius;
+    [SerializeField] private float atkRadius;
     [SerializeField] private LayerMask whatIsCollisible;
     [SerializeField] private LayerMask queEsDanhable;
 
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     private Collider2D colliderAhead;
     private Animator animator;
     private bool interacting;
+    private bool hasWeapon = false;
 
     public bool Interacting { get => interacting; set => interacting = value; }
 
@@ -57,7 +59,7 @@ public class Player : MonoBehaviour
 
     private void LanzarAtaque()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && hasWeapon)
         {
             animator.SetTrigger("attack");
         }
@@ -102,6 +104,24 @@ public class Player : MonoBehaviour
         return Physics2D.OverlapCircle(interactionPoint, interactionRadius, whatIsCollisible);
     }
 
+    public void ShowDamage() {
+        StartCoroutine(DamageEffectSequence(GetComponent<SpriteRenderer>(), Color.red, .5f, .5f));
+    }
+
+    IEnumerator DamageEffectSequence(SpriteRenderer sr, Color dmgColor, float duration, float delay)
+    {
+        Color originColor = sr.color;
+        sr.color = dmgColor;
+        yield return new WaitForSeconds(delay);
+        for (float t = 0; t < 1.0f; t += Time.deltaTime/duration)
+        {
+            sr.color = Color.Lerp(dmgColor, originColor , t);
+
+            yield return null;
+        }
+        sr.color = originColor;
+    }
+
     private void Interact()
     {
         colliderAhead = UseOverlap();
@@ -117,16 +137,19 @@ public class Player : MonoBehaviour
     //Used as animation event
     private void Attack()
     {
-        Collider2D[] colliderTocados = Physics2D.OverlapCircleAll(interactionPoint, interactionRadius, queEsDanhable);
+        Collider2D[] colliderTocados = Physics2D.OverlapCircleAll(interactionPoint, atkRadius, queEsDanhable);
         foreach (Collider2D colliderAhead in colliderTocados)
         {
-            if (colliderAhead.TryGetComponent(out SistemaVidas sistemaVidas))
+            if (!colliderAhead.CompareTag("Player"))
             {
-                sistemaVidas.RecibirDanho(damage);
-            }
-            if (colliderAhead.TryGetComponent(out Enemy enemy))
-            {
-                enemy.TakeDamage();
+                if (colliderAhead.TryGetComponent(out SistemaVidas sistemaVidas))
+                {
+                    sistemaVidas.RecibirDanho(damage);
+                }
+                if (colliderAhead.TryGetComponent(out Enemy enemy))
+                {
+                    enemy.TakeDamage();
+                }
             }
         }
     }
@@ -134,5 +157,14 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(interactionPoint, interactionRadius);
+    }
+
+    public Vector3 GetInteractionPoint() {
+        return interactionPoint;
+    }
+
+    public void SetMainWeapon(float damage) {
+        this.damage = damage;
+        hasWeapon = true;
     }
 }

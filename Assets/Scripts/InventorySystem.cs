@@ -46,6 +46,26 @@ public class InventorySystem : MonoBehaviour
                 availableItems--;
             }
         }
+        else if (inventoryData[index].isPlaceable) {
+            GameObject item = Instantiate(inventoryData[index].placeableItem, player.GetComponent<Player>().GetInteractionPoint(), Quaternion.identity);
+            if (item.TryGetComponent(out Bomb bomb))
+            {
+                bomb.TriggerBomb();
+            }
+            RemoveFromButtons(index);
+            inventoryData.Remove(inventoryData[index]);
+            availableItems--;
+        }
+        else if (inventoryData[index].raiseMaxHealthAmount > 0) {
+            SistemaVidas sistemaVidas = player.GetComponent<SistemaVidas>();
+            sistemaVidas.RaiseMaxHealth(inventoryData[index].raiseMaxHealthAmount);
+            RemoveFromButtons(index);
+            inventoryData.Remove(inventoryData[index]);
+            availableItems--;
+        }
+        else if (inventoryData[index].isMainWeapon) {
+            player.GetComponent<Player>().SetMainWeapon(inventoryData[index].damage);
+        }
     }
 
     private void RemoveFromButtons(int index) {

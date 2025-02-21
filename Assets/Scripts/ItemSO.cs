@@ -9,4 +9,9 @@ public class ItemSO : ScriptableObject
     public int damage;
     public Sprite icon;
     public float healAmount;
+
+    public bool isPlaceable;
+    public GameObject placeableItem;
+    public float raiseMaxHealthAmount;
+    public bool isMainWeapon;
 }
