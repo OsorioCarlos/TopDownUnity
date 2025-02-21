@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   itemName: Espada
-  damage: 15
+  damage: 1
   icon: {fileID: 21300000, guid: ad4bde4ff881b433c9782cb194049b0f, type: 3}
+  healAmount: 0
+  isPlaceable: 0
+  placeableItem: {fileID: 0}
+  raiseMaxHealthAmount: 0
+  isMainWeapon: 1

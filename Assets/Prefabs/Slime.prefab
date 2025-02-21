@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 4596247771570830362}
   - component: {fileID: 3902306371985804027}
   - component: {fileID: 5565007156232570840}
-  m_Layer: 0
+  - component: {fileID: 5171291683022644305}
+  - component: {fileID: 3329855713864709613}
+  m_Layer: 7
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -180,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &3902306371985804027
 MonoBehaviour:
@@ -214,3 +216,31 @@ MonoBehaviour:
   whatIsCollisible:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &5171291683022644305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467337229064573181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df98e79f4b0b604da9aafcf80eb51dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVidas: 1
+  currentVidas: 1
+  healthBarCurrent: {fileID: 0}
+  healthBarTotal: {fileID: 0}
+--- !u!114 &3329855713864709613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467337229064573181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12d8cb9fcc4d78498f15cd2f602874d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

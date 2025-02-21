@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
             if (player.TryGetComponent(out SistemaVidas playerHealthSystem))
             {
                 playerHealthSystem.RecibirDanho(damage);
+                player.ShowDamage();
             }
         }
     }
@@ -39,5 +40,11 @@ public class Enemy : MonoBehaviour
     protected void SetAnimator(Animator animator)
     {
         this.animator = animator;
+    }
+
+    public void TakeDamage(){
+        State<Enemy> lastState = currentState;
+        ChangeState(GetComponent<DamageState>());
+        ChangeState(lastState);
     }
 }

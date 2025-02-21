@@ -15,3 +15,6 @@ MonoBehaviour:
   itemName: Bomba
   damage: 30
   icon: {fileID: 21300000, guid: 90a177c6fcc6045b3817e7b3d2b189f0, type: 3}
+  healAmount: 0
+  isPlaceable: 1
+  placeableItem: {fileID: 3659076851690705411, guid: 6365e4c4565066344995cae16095a822, type: 3}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1508371572811670567}
   - component: {fileID: 6379179928703852024}
   - component: {fileID: 1580346652049833844}
+  - component: {fileID: -8612645328691006959}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -214,3 +215,19 @@ MonoBehaviour:
   whatIsCollisible:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &-8612645328691006959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604678454439259048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df98e79f4b0b604da9aafcf80eb51dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVidas: 0
+  currentVidas: 0
+  healthBarCurrent: {fileID: 0}
+  healthBarTotal: {fileID: 0}
