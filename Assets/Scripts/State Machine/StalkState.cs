@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Direction
+enum DirectionEnum
 {
     Down,
     Up,
@@ -12,7 +12,7 @@ enum Direction
 
 public class StalkState : State<Enemy>
 {
-    [SerializeField] private Direction initialDirection;
+    [SerializeField] private DirectionEnum initialDirection;
 
     private bool setDirection = true;
 
@@ -39,15 +39,15 @@ public class StalkState : State<Enemy>
 
     private void SetAxisDirection()
     {
-        if (initialDirection == Direction.Right)
+        if (initialDirection == DirectionEnum.Right)
         {
             controller.Animator.SetFloat("axisX", 1);
         }
-        else if (initialDirection == Direction.Left)
+        else if (initialDirection == DirectionEnum.Left)
         {
             controller.Animator.SetFloat("axisX", -1);
         }
-        else if (initialDirection == Direction.Up)
+        else if (initialDirection == DirectionEnum.Up)
         {
             controller.Animator.SetFloat("axisY", 1);
         }

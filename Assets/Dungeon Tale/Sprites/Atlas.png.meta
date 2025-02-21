@@ -3,7 +3,7 @@ guid: b631ed305dfd43c488e0f8edf5c829bc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -173,10 +173,10 @@ TextureImporter:
       name: Floor_A
       rect:
         serializedVersion: 2
-        x: 142
-        y: 62
-        width: 20
-        height: 20
+        x: 144
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Floor_B
       rect:
         serializedVersion: 2
-        x: 174
-        y: 62
-        width: 20
-        height: 20
+        x: 176
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: Floor_C
       rect:
         serializedVersion: 2
-        x: 142
-        y: 30
-        width: 20
-        height: 20
+        x: 144
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Floor_D
       rect:
         serializedVersion: 2
-        x: 174
-        y: 30
-        width: 20
-        height: 20
+        x: 176
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2630,10 +2630,10 @@ TextureImporter:
       name: Floor_Wood
       rect:
         serializedVersion: 2
-        x: 206
-        y: 190
-        width: 20
-        height: 20
+        x: 208
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2651,10 +2651,10 @@ TextureImporter:
       name: Floor_Metal
       rect:
         serializedVersion: 2
-        x: 174
+        x: 176
         y: 190
-        width: 20
-        height: 20
+        width: 16
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2672,10 +2672,10 @@ TextureImporter:
       name: Floor_Red
       rect:
         serializedVersion: 2
-        x: 142
-        y: 190
-        width: 20
-        height: 20
+        x: 144
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3008,10 +3008,10 @@ TextureImporter:
       name: Floor_Dirt
       rect:
         serializedVersion: 2
-        x: 142
-        y: 238
-        width: 20
-        height: 20
+        x: 144
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3029,10 +3029,10 @@ TextureImporter:
       name: Floor_Flash
       rect:
         serializedVersion: 2
-        x: 174
-        y: 238
-        width: 20
-        height: 20
+        x: 176
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4000,7 +4000,7 @@ TextureImporter:
         width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4021,7 +4021,7 @@ TextureImporter:
         width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4029,6 +4029,27 @@ TextureImporter:
       bones: []
       spriteID: fa68c3e17167377438c69568a417ef4a
       internalID: 1777575153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_E
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60ab186168616149b12f69aaf97aa97
+      internalID: -277780423
       vertices: []
       indices: 
       edges: []
@@ -4127,6 +4148,7 @@ TextureImporter:
       Floor_C: 425766875
       Floor_D: -1071430000
       Floor_Dirt: -570979032
+      Floor_E: -277780423
       Floor_Flash: 963518308
       Floor_Metal: 347329323
       Floor_Red: 1933650392
