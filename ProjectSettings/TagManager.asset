@@ -6,6 +6,8 @@ TagManager:
   tags:
   - NPC
   - Enemy
+  - InGameUI
+  - InGameCam
   layers:
   - Default
   - TransparentFX

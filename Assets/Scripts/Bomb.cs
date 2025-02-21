@@ -45,7 +45,7 @@ public class Bomb : MonoBehaviour
 
     IEnumerator DestroySelf()
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(1);
         Destroy(this.gameObject);
     }
 

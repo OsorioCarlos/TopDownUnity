@@ -72,7 +72,23 @@ public class ChangeScene : MonoBehaviour
 
     public void LoadNextScene()
     {
+        string sceneName = GetSceneName();
+        if (sceneName == "Finish") { 
+            Destroy(player);
+            Destroy(UI);
+            Destroy(virtualCam);
+        }
         SceneManager.LoadScene(GetSceneName());
+    }
+
+    public void LoadNextScene(string sceneName)
+    {
+        if (sceneName == "Finish") { 
+            Destroy(player);
+            Destroy(UI);
+            Destroy(virtualCam);
+        }
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitGame()
