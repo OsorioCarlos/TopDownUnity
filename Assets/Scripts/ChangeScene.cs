@@ -19,11 +19,25 @@ enum SceneEnum
 public class ChangeScene : MonoBehaviour
 {
     [SerializeField] SceneEnum scene;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject virtualCam;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Player player))
         {
+            if (player != null) {
+                DontDestroyOnLoad(player);
+            }
+            if (UI != null) {
+                DontDestroyOnLoad(UI);
+            }
+            if (virtualCam != null) {
+                DontDestroyOnLoad(virtualCam);
+            }
+            player.transform.position = Vector3.zero;
+            player.ResetDestinationPoint();
             LoadNextScene();
         }
     }
