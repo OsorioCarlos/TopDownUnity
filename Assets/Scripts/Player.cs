@@ -167,4 +167,8 @@ public class Player : MonoBehaviour
         this.damage = damage;
         hasWeapon = true;
     }
+
+    public void ResetDestinationPoint() {
+        destinationPoint = transform.position;
+    }
 }
